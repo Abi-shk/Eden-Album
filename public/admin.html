@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cherished Chapters by Eden — Admin</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">Cherished Chapters by Eden <span class="brand-eyebrow">Admin</span></div>
+    <div class="topbar-right">
+      <span id="who"></span>
+      <button class="btn btn-secondary btn-sm" onclick="logout()">Sign out</button>
+    </div>
+  </div>
+
+  <div class="shell">
+    <div class="tabs">
+      <button class="tab active" data-tab="albums">Albums</button>
+      <button class="tab" data-tab="clients">Clients</button>
+      <button class="tab" data-tab="event-types">Event types</button>
+      <button class="tab" data-tab="layouts">Layouts</button>
+    </div>
+
+    <!-- ALBUMS -->
+    <div class="tab-panel" id="panel-albums">
+      <div class="section-head">
+        <div><h2>All albums</h2><p>Every client album, across every event type.</p></div>
+      </div>
+      <div id="albums-container"></div>
+    </div>
+
+    <!-- CLIENTS -->
+    <div class="tab-panel" id="panel-clients" style="display:none;">
+      <div class="section-head">
+        <div><h2>Clients</h2><p>Create logins for clients, or let them arrive via Google sign-in.</p></div>
+        <button class="btn btn-primary" id="new-client-btn">+ New client</button>
+      </div>
+      <div class="card"><div id="clients-table"></div></div>
+    </div>
+
+    <!-- EVENT TYPES -->
+    <div class="tab-panel" id="panel-event-types" style="display:none;">
+      <div class="section-head">
+        <div><h2>Event types</h2><p>The occasions clients can choose from when creating an album.</p></div>
+      </div>
+      <div class="card">
+        <div style="display:flex; gap:10px; margin-bottom:16px;">
+          <input id="new-type-input" placeholder="e.g. Corporate event" style="flex:1; padding:9px 12px; border:1px solid var(--line); border-radius:6px;" />
+          <button class="btn btn-secondary btn-sm" id="add-type-btn">Add</button>
+        </div>
+        <div id="types-list"></div>
+      </div>
+    </div>
+
+    <!-- LAYOUTS -->
+    <div class="tab-panel" id="panel-layouts" style="display:none;">
+      <div class="section-head">
+        <div><h2>Layout templates</h2><p>Presets available to every client, plus anything your team uploads.</p></div>
+        <button class="btn btn-primary" id="new-layout-btn">+ Upload layout</button>
+      </div>
+      <div id="layouts-container" class="layout-grid"></div>
+    </div>
+  </div>
+
+  <!-- New client modal -->
+  <div id="new-client-overlay" class="overlay" style="display:none;">
+    <div class="modal">
+      <h3>New client</h3>
+      <p class="hint" style="margin-bottom:16px;">Set a login for a client who won't be signing in with Google.</p>
+      <div id="client-error"></div>
+      <div class="field"><label>Name</label><input id="nc-name" placeholder="Priya &amp; Arjun" /></div>
+      <div class="field"><label>Email</label><input id="nc-email" type="email" placeholder="client@email.com" /></div>
+      <div class="field"><label>Temporary password</label><input id="nc-password" type="text" placeholder="Set a password to share with them" /></div>
+      <div style="display:flex; gap:10px; margin-top:6px;">
+        <button class="btn btn-secondary" id="nc-cancel" style="flex:1;">Cancel</button>
+        <button class="btn btn-primary" id="nc-create" style="flex:1;">Create login</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- New layout modal -->
+  <div id="new-layout-overlay" class="overlay" style="display:none;">
+    <div class="modal">
+      <h3>Upload layout template</h3>
+      <p class="hint" style="margin-bottom:16px;">Add a new album template to the shared library every client can choose from.</p>
+      <div class="field"><label>Template name</label><input id="nl-name" placeholder="Modern Editorial" /></div>
+      <div class="field">
+        <label>Columns (grid density)</label>
+        <select id="nl-cols"><option value="1">1 — full bleed</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option></select>
+      </div>
+      <div class="field"><label>Accent color</label><input id="nl-accent" type="color" value="#C97B84" style="height:42px; padding:4px;" /></div>
+      <div class="field">
+        <label>Thumbnail image (optional)</label>
+        <input id="nl-thumb" type="file" accept="image/*" />
+      </div>
+      <div style="display:flex; gap:10px; margin-top:6px;">
+        <button class="btn btn-secondary" id="nl-cancel" style="flex:1;">Cancel</button>
+        <button class="btn btn-primary" id="nl-create" style="flex:1;">Upload</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

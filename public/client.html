@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thread & Frame — My Albums</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">Cherished Chapters by Eden<span class="brand-eyebrow">Client</span></div>
+    <div class="topbar-right">
+      <span id="who"></span>
+      <button class="btn btn-secondary btn-sm" onclick="logout()">Sign out</button>
+    </div>
+  </div>
+
+  <div class="shell">
+
+    <!-- ===== EVENTS LIST VIEW ===== -->
+    <div id="events-view">
+      <div class="section-head">
+        <div>
+          <h2>Your albums</h2>
+          <p>Create an album for each occasion — wedding, baptism, pre-wed, and more.</p>
+        </div>
+        <button class="btn btn-primary" id="new-event-btn">+ New album</button>
+      </div>
+      <div id="events-container"></div>
+    </div>
+
+    <!-- ===== EVENT DETAIL VIEW ===== -->
+    <div id="event-detail-view" style="display:none;">
+      <button class="btn btn-secondary btn-sm" id="back-btn" style="margin-bottom:18px;">← Back to albums</button>
+      <div class="section-head">
+        <div>
+          <h2 id="detail-title"></h2>
+          <p id="detail-sub"></p>
+        </div>
+        <span id="detail-status" class="status-tag"></span>
+      </div>
+
+      <div class="card" style="margin-bottom:20px;">
+        <h3 style="margin:0 0 4px; font-family:var(--font-display); font-size:17px;">1. Add photos</h3>
+        <p class="hint" style="margin-bottom:14px;">Upload files directly, or paste a Google Drive folder link if that's easier for a large shoot.</p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <label class="btn btn-secondary btn-sm" style="cursor:pointer;">
+            Upload photos
+            <input type="file" id="photo-input" accept="image/*" multiple style="display:none;" />
+          </label>
+          <input type="text" id="drive-link-input" placeholder="Paste Google Drive link…" style="flex:1; min-width:200px; padding:8px 12px; border:1px solid var(--line); border-radius:6px; font-size:13px;" />
+          <button class="btn btn-secondary btn-sm" id="drive-link-btn">Add link</button>
+        </div>
+        <div id="photo-grid" class="photo-grid"></div>
+      </div>
+
+      <div class="card" style="margin-bottom:20px;">
+        <h3 style="margin:0 0 4px; font-family:var(--font-display); font-size:17px;">2. Who designs the album?</h3>
+        <div class="mode-choice">
+          <div class="mode-card" data-mode="self" id="mode-self">
+            <h4>I'll design it</h4>
+            <p>Pick a layout template below and arrange your own photos. Best if you know exactly what you want.</p>
+          </div>
+          <div class="mode-card" data-mode="assigned_to_company" id="mode-company">
+            <h4>Studio designs it</h4>
+            <p>Hand your photos to Thread &amp; Frame — our designers will lay out the album and send it for your approval.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="margin:0 0 4px; font-family:var(--font-display); font-size:17px;">3. Choose a layout</h3>
+        <p class="hint">Pick a starting template. If the studio is designing, this is just a style preference for them.</p>
+        <div id="layout-grid" class="layout-grid"></div>
+        <button class="btn btn-primary" id="save-album-btn" style="margin-top:18px;">Save album setup</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="new-event-overlay" class="overlay" style="display:none;">
+    <div class="modal">
+      <h3>New album</h3>
+      <p class="hint" style="margin-bottom:16px;">What kind of occasion is this album for?</p>
+      <div class="field">
+        <label>Event type</label>
+        <select id="new-event-type"></select>
+      </div>
+      <div style="display:flex; gap:10px; margin-top:10px;">
+        <button class="btn btn-secondary" id="new-event-cancel" style="flex:1;">Cancel</button>
+        <button class="btn btn-primary" id="new-event-create" style="flex:1;">Create album</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+  <script src="/js/client.js"></script>
+</body>
+</html>

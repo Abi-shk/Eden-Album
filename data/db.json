@@ -1,0 +1,76 @@
+{
+  "users": [
+    {
+      "id": "OjW40c9ewJ",
+      "name": "Studio Admin",
+      "email": "admin@studio.com",
+      "passwordHash": "$2a$10$V2gotn14EHvZL5ILjhxlVewlOiBGkuTtFkxF2i.9nPbc65LyixRA.",
+      "role": "admin",
+      "authProvider": "admin_created",
+      "createdAt": "2026-07-15T11:37:01.329Z"
+    }
+  ],
+  "eventTypes": [
+    {
+      "id": "36A3YzKA",
+      "name": "Wedding"
+    },
+    {
+      "id": "l1SxoJos",
+      "name": "Pre-Wedding"
+    },
+    {
+      "id": "DXuHOs7P",
+      "name": "Baptism"
+    },
+    {
+      "id": "p5XreB7z",
+      "name": "Engagement"
+    },
+    {
+      "id": "l8GyxZur",
+      "name": "Anniversary"
+    }
+  ],
+  "events": [],
+  "photos": [],
+  "layouts": [
+    {
+      "id": "FokbO_bG",
+      "name": "Classic Grid",
+      "type": "preset",
+      "accent": "#C97B84",
+      "cols": 3,
+      "createdBy": "Studio",
+      "createdAt": "2026-07-15T11:37:01.333Z"
+    },
+    {
+      "id": "4Vy6ZcQC",
+      "name": "Full Bleed Spread",
+      "type": "preset",
+      "accent": "#6B7A5E",
+      "cols": 1,
+      "createdBy": "Studio",
+      "createdAt": "2026-07-15T11:37:01.334Z"
+    },
+    {
+      "id": "WhIp8Gib",
+      "name": "Story Timeline",
+      "type": "preset",
+      "accent": "#B08968",
+      "cols": 2,
+      "createdBy": "Studio",
+      "createdAt": "2026-07-15T11:37:01.334Z"
+    },
+    {
+      "id": "c8qmfCvg",
+      "name": "Polaroid Scatter",
+      "type": "preset",
+      "accent": "#7A6A8A",
+      "cols": 4,
+      "createdBy": "Studio",
+      "createdAt": "2026-07-15T11:37:01.335Z"
+    }
+  ],
+  "albums": []
+}
